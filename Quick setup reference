@@ -1,0 +1,10 @@
+#Install zsh
+apt-get install zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+.ohmyzsh/theme/robbyrussell.zsh-theme ==> PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
+
+
+#Install and config git
+apt-get install git-all
+git config --global user.name "outofhere"
+git config --global user.email "outofhere@mail.ru"
