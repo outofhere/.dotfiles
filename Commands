@@ -1,0 +1,5 @@
+# Handful commands
+
+# Decode via console
+
+echo "" | base64 -- decode
