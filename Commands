@@ -3,3 +3,6 @@
 # Decode via console
 
 echo "" | base64 -- decode
+
+# Curl 
+-A "AGENT"
