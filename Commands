@@ -6,3 +6,6 @@ echo "" | base64 -- decode
 
 # Curl 
 -A "AGENT"
+
+# Socks5
+ssh -D 8123 -f -C -q -N outofhere@host
