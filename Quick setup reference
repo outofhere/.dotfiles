@@ -1,3 +1,6 @@
+#Vim visual setup
+cd ~; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/.vimrc; mkdir -p .vim/colors/; cd .vim/colors/; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/badwolf.vim
+
 #Install zsh
 apt-get install zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
