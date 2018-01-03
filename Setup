@@ -1,0 +1,3 @@
+#Setup process goes as follows:
+#Vim visual setup
+cd ~; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/.vimrc; mkdir -p .vim/colors/; cd .vim/colors/; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/badwolf.vim
