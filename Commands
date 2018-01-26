@@ -14,4 +14,6 @@ ssh -D 8123 -f -C -q -N outofhere@host
   -ps   # output in postscript hexdump style
   fold  # wrap each input line to fit specified width
   -w 8  # specified width
-  
+  tac   # reverse cat
+ 
+xxd -ps | fold -w 8 | tac
