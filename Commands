@@ -9,3 +9,9 @@ echo "" | base64 -- decode
 
 # Socks5
 ssh -D 8123 -f -C -q -N outofhere@host
+
+# xxd
+  -ps   # output in postscript hexdump style
+  fold  # wrap each input line to fit specified width
+  -w 8  # specified width
+  
