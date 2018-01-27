@@ -1,3 +1,13 @@
+apt-get update
+apt-get dist-upgrade
+System-Preferences-Hardware-Power Management -> Put = Never
+apt-get install build-essential linux-headers-amd64 linux-headers-686-pae pv netcat-traditional socat mc vim tmux strace ltrace edb-debugger cmake dc libtool lzop mtr htop gcc-multilib
+
+x64: apt-get install gcc-multilib
+/etc/default/grub -> GRUB_TIMEOUT=2
+update-grub
+apt-get autoremove --purge
+
 #Vim visual setup
 cd ~; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/.vimrc; mkdir -p .vim/colors/; cd .vim/colors/; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/badwolf.vim
 
@@ -6,3 +16,29 @@ apt-get install zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 .ohmyzsh/theme/robbyrussell.zsh-theme ==> PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
 
+#Needful
+pip install pwntools
+pip install docopt
+git clone https://github.com/hellman/xortool
+
+git clone https://github.com/Ganapati/RsaCtfTool.git
+pip install -r requirements.txt
+
+git clone https://github.com/hellman/libnum.git
+
+pip install uncompyle
+
+
+#Stegsolve
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+
+#Exiftool
+wget https://www.sno.phy.queensu.ca/\~phil/exiftool/Image-ExifTool-10.64.tar.gz
+perl Makefile.PL
+make test
+sudo make install
+
+#zsteg
+gem install rake
+gem install zsteg
