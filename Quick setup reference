@@ -42,3 +42,6 @@ sudo make install
 #zsteg
 gem install rake
 gem install zsteg
+
+#Shellen
+sudo pip3 install shellen
