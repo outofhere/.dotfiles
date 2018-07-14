@@ -84,4 +84,4 @@ gem install rake
 gem install zsteg
 
 # Binwalk
-dnf install binwalk
+dnf install binwalk -y
