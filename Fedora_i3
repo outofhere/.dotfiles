@@ -1,0 +1,87 @@
+# Update dnf
+dnf update -y
+
+# Xorg requirements 
+dnf install xorg-x11-server-Xorg -y
+dnf install xorg-x11-xsm -y
+dnf install xorg-x11-xinit -y
+dnf install xorg-x11-drivers -y
+
+# Window manager
+dnf intall lightdm -y
+
+dnf install i3 -y
+dnf install i3status-y
+dnf install dmenu -y
+dnf install i3lock -y
+dnf install feh -y
+dnf install rxvt-unicode -y
+dnf install network-manager-applet -y
+
+# Enable service
+systemctl enable lightdm.service
+
+# Change user-session=<anything> with user-session=i3 in /etc/lightdm/lightdm.conf
+echo "user-session=i3" >> /etc/lightdm/lightdm.conf
+
+# Start i3
+echo "exec i3" > ~/.xinitrc
+ln -s /lib/systemd/system/graphical.target /etc/systemd/system/default2.target 
+mv /etc/systemd/system/default2.target /etc/systemd/system/default.target 
+
+# Virtual box guest
+dnf install gcc automake make kernel-headers kernel-devel perl -y 
+
+# Resolution (VGA-1 | HDMI-1)
+xrandr --output VGA-1 --mode 1920x1080 
+xrandr --output VGA-1 --mode 1024x768
+
+# Tools
+dnf install pv socat mc vim tmux strace ltrace cmake libtool lzop mtr htop curl wget ruby -y
+
+# M32 compilation
+dnf install gcc glibc-devel.i686 glibc-devel gmp-devel python-gmpy2 git -y
+
+# Python devel for pip
+dnf install python-devel -y
+
+# Vim visual setup
+cd ~; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/.vimrc; mkdir -p .vim/colors/; cd .vim/colors/; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/badwolf.vim
+
+# ZSH
+dnf install zsh -y
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# .ohmyzsh/theme/robbyrussell.zsh-theme ==> PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
+
+
+# Needful
+pip install pwntools
+pip install docopt
+pip install uncompyle
+
+cd /opt
+git clone https://github.com/hellman/xortool
+cd xortool; python setup.py install; cd ..
+
+git clone https://github.com/Ganapati/RsaCtfTool.git
+cd RsaCtfTool; pip install -r requirements.txt; cd ..
+
+git clone https://github.com/hellman/libnum.git
+cd libnum; python setup.py install; cd ..
+
+# Stegsolve
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+
+# Exiftool
+wget https://www.sno.phy.queensu.ca/\~phil/exiftool/Image-ExifTool-10.64.tar.gz
+tar xvf Image-ExifTool-10.64.tar.gz
+rm Image-ExifTool-10.64.tar.gz
+cd Image-ExifTool-10.64; perl Makefile.PL; make test; make install; cd ..
+
+# zsteg
+gem install rake
+gem install zsteg
+
+# Binwalk
+dnf install binwalk
