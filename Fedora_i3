@@ -52,7 +52,7 @@ cd ~; wget https://raw.githubusercontent.com/outofhere/Linux-setup-stuff/master/
 dnf install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 # .ohmyzsh/theme/robbyrussell.zsh-theme ==> PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
-
+dnf install util-linux-user -y
 
 # Needful
 pip install pwntools
