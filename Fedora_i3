@@ -39,6 +39,9 @@ xrandr --output VGA-1 --mode 1024x768
 # Tools
 dnf install pv socat mc vim tmux strace ltrace cmake libtool lzop mtr htop curl wget ruby -y
 
+# Clang
+dnf install clang
+
 # M32 compilation
 dnf install gcc glibc-devel.i686 glibc-devel gmp-devel python-gmpy2 git -y
 
