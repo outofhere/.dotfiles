@@ -47,6 +47,7 @@ call plug#end()
 let g:NERDTreeWinPos = "right"
 autocmd BufEnter * lcd %:p:h
 map <C-o> :NERDTreeToggle<CR>"
+let g:NERDTreeWinSize=25
 
 " Airline plugin settings
 let g:airline_theme='angr'
