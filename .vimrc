@@ -1,8 +1,10 @@
 " In order to get colors work
-if &term == "screen-256colors"
-   set t_Co=256
-endif
+set t_Co=256
+set t_ut=
 set background=dark
+colorscheme iceberg
+set hlsearch
+set incsearch
 " Syntax
 syntax enable
 " Spaces & Tabs
@@ -24,10 +26,14 @@ set showmatch
 set list
 " Unprintable chars mapping
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«
-
 " Used to NOT bypass backlines
 nnoremap j gj
 nnoremap k gk
+
+" Save position in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -38,18 +44,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
-
-Plug 'chriskempson/base16-vim'
+"Plug 'vim-scripts/Wombat'
+"Plug 'chriskempson/base16-vim'
 call plug#end()
 
 
 " NerdTREE plugin settings
 let g:NERDTreeWinPos = "right"
 autocmd BufEnter * lcd %:p:h
-map <C-o> :NERDTreeToggle<CR>"
+nmap <C-o> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=25
 
 " Airline plugin settings
 let g:airline_theme='angr'
-
 " EasyMotion plugin settings
+map <Leader> <Plug>(easymotion-prefix)
+"nmap s <Plug>(easymotion-s2)
+"nmap t <Plug>(easymotion-t2)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
