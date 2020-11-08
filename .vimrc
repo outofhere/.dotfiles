@@ -44,6 +44,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
+
+Plug 'rust-lang/rust.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdcommenter'
 "Plug 'vim-scripts/Wombat'
 "Plug 'chriskempson/base16-vim'
 call plug#end()
