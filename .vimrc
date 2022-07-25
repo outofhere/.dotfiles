@@ -13,7 +13,7 @@ set softtabstop=4
 set encoding=utf-8
 set colorcolumn=80
 set expandtab
-set paste
+"set paste  -- auto-paris not working w/
 set number
 set showcmd
 set noswapfile
