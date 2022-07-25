@@ -1,0 +1,12 @@
+configuration {
+    font: "Fira Code 12";
+    width: 30;
+    line-margin: 10;
+    lines: 6;
+    columns: 2;
+
+    show-icons:     false;
+}
+
+
+@theme "~/.config/rofi/nord.rasi"
