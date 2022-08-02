@@ -16,7 +16,7 @@
     sudo dnf install sddm bspwm sxhkd -y
     sudo dnf install feh tig polybar nautilus picom xsetroot rofi htop lxappearance -y
     sudo dnf install ranger chromium-browser flameshot openvpn gcc clang mupdf -y
-    sudo dnf install fira-code-font -y
+    sudo dnf install fira-code-fonts -y
     sudo dnf install google-roboto-mono-font -y
     sudo dnf install fontawesome-fonts
 
